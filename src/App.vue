@@ -1,5 +1,9 @@
 <template>
   <div id="app">
-    Hello my frends !
+    Hello my frend
+
+  <router-view/>
+
   </div>
 </template>
+

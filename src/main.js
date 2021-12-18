@@ -3,10 +3,6 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-
-
-
-
 Vue.config.productionTip = false
 
 new Vue({
@@ -14,5 +10,3 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
-
-
