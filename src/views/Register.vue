@@ -2,7 +2,7 @@
     <div class="auth-page" >
         <div class="container page">
             <div class="row">
-                <div class="col-md-6 ofset-md-3 col-xs-12">
+                <div class="col-md-6 offset-md-3 col-xs-12">
                     <h1 class="text-xs-center">Sign Up</h1>
                     <p class="text-xs-center">
                         <router-link :to="{name: 'login'}">Need an account?</router-link>
@@ -37,9 +37,7 @@
                         >
                             Sign Up
                         </button>
-                    </form>
-                    <!-- <button @click="increaseCounter">Increase counter</button>
-                    {{count}}   -->
+                    </form>        
                 </div>
             </div>
         </div>
@@ -57,12 +55,9 @@ export default {
     methods : {
         onSubmit() {
             console.log('subbmitted form')
-            this.$store.commit('registerStart')
+            this.$store.dispatch('register')
         },
-// increaseCounter() {
-//   console.log('increaseCounter')
-//   this.$store.commit('increment')  
-// }
+
     }
 }
 </script>
