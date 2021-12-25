@@ -55,9 +55,16 @@ export default {
     methods : {
         onSubmit() {
             console.log('subbmitted form')
-            this.$store.dispatch('register')
-        },
-
+            this.$store
+                .dispatch('register', {
+                    email: 'dfsdsfdfdsxzcsf@geogwe.com', 
+                    username:'vfdfdddfdvs', 
+                    paswword: '1234567894'
+                })
+                .then(user => {
+                console.log('successfully register user', user)
+                })
+        }
     }
 }
 </script>
