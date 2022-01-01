@@ -3,9 +3,9 @@
     <div class="container page">
       <div class="row">
         <div class="col-md-6 offset-md-3 col-xs-12">
-          <h1 class="text-xs-center">Регистрация</h1>
+          <h1 class="text-xs-center">Войти</h1>
           <p class="text-xs-center">
-            <router-link :to="{name: 'login'}">
+            <router-link :to="{name: 'register'}">
               Есть аккаунт?
             </router-link>
           </p>
@@ -18,15 +18,7 @@
               <input
                 class="form-control form-control-lg"
                 type="text"
-                placeholder="Имя пользователя"
-                v-model="username"
-              />
-            </fieldset>
-            <fieldset class="form-group">
-              <input
-                class="form-control form-control-lg"
-                type="text"
-                placeholder="Eм@ил"
+                placeholder="Ем@ил"
                 v-model="email"
               />
             </fieldset>
@@ -42,7 +34,7 @@
               class="btn btn-lg btn-primary pull-xs-right"
               :disabled="isSubmitting"
             >
-              Регистрация
+              Войти
             </button>
           </form>
         </div>
@@ -56,16 +48,16 @@ import {mapState} from 'vuex'
 
 import McvValidationErrors from '@/components/ValidationErrors.vue'
 import {actionTypes} from '@/store/modules/auth'
+
 export default {
-  name: 'McvRegister',
+  name: 'McvLogin',
   components: {
     McvValidationErrors
   },
   data() {
     return {
       email: '',
-      password: '',
-      username: ''
+      password: ''
     }
   },
   computed: {
@@ -77,9 +69,8 @@ export default {
   methods: {
     onSubmit() {
       this.$store
-        .dispatch(actionTypes.register, {
+        .dispatch(actionTypes.login, {
           email: this.email,
-          username: this.username,
           password: this.password
         })
         .then(() => {
